@@ -1,0 +1,290 @@
+@charset 'UTF-8';
+
+/*
+カスタムプロパティの定義
+================================================ */
+:root {
+    --text-color: #555;
+    --text-color02: #Ffff;
+    --main-color: #93B9D7;
+    --sub-color: #E3EDEE;
+    --sub-color02: #EAD4D4;
+    --bg: #f3f3f3;
+}
+
+/*
+GENERAL STYLING
+================================================ */
+html {
+    font-size: 100%;
+}
+body {
+    color: var(--text-color);
+    background: var(--bg);
+    font-family: sans-serif;
+}
+
+/*
+COMMON
+================================================ */
+p {
+    line-height: 1.7;
+}
+img {
+    max-width: 100%;
+}
+section {
+    margin-bottom: 8rem;
+}
+.wrapper {
+    width: min(100% - 2rem, 1200px);
+    margin-inline: auto;
+}
+
+.center {
+    text-align: center;
+}
+/*
+HEADER
+================================================ */
+header {
+    position: fixed;
+    margin: 1rem 0 0 1rem;
+    top: 0;
+    z-index: 1;
+}
+h1 {
+    font-size: 1.25rem;
+}
+h1, 
+.main-nav li {
+    margin-bottom: 1rem;
+}
+.main-nav li{
+    transition: all .3s;
+}
+.main-nav li:hover {
+    color: var(--sub-color02);
+}
+.main-nav .current{
+    color: var(--main-color);
+}
+
+/*
+SECTION
+================================================ */
+.section-title {
+    text-align: center;
+    margin-bottom:3.5rem;
+    position: relative;
+}
+
+.section-title .en {
+    display: inline-block;
+    font-size: 3rem;
+    font-family: 'Allura', cursive;
+}
+.section-title .ja {
+    font-size: 1rem;
+    font-family: 'Cabin', sans-serif;
+}
+
+.section-title .en::before,
+.section-title .en::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 60px;
+    height: 2px;
+    background: var(--main-color);
+    bottom: 50%;
+}
+.section-title .en::before {
+    margin-left: -100px;
+}
+.section-title .en::after {
+    margin-left: 45px;
+}
+
+/*
+HERO
+================================================ */
+.hero {
+    display: flex;
+    color: var(--text-color02);
+    background: var(--main-color);
+    width: 100%;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+}
+.hero-title {
+    text-align: center;
+}
+.hero-main-title {
+    font-size: 7rem;
+    letter-spacing: 0.25em;
+    font-family: 'Allura', cursive;
+}
+.hero-name-title {
+    font-size: 3rem;
+}
+
+/*
+WORKS
+================================================ */
+.works-grid {
+    display: grid;
+    gap: 6rem 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.works-item {
+    width: 100%;
+    margin: 0 auto;
+}
+.works-item img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    object-position: 0 0;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .2);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    text-align: center;
+}
+
+/*
+ABOUT
+================================================ */
+.about-text{
+    width: 48%;
+    margin: 0 auto;
+}
+.about-text .name {
+    margin-bottom: 1rem;
+}
+
+/* More-btn */
+.btn {
+    margin: 4rem;
+    text-align: center;
+}
+.btn-more {
+    color: var(--text-color02);
+    background: var(--main-color);
+    padding: 1rem 3rem;
+    border-radius: 100vh;
+    position: relative;
+}
+.btn-more::before {
+    content: '';
+    position: absolute;
+    bottom: 12px;
+    left: 21%;
+    width: 60%;
+    height: 1px;
+    background: var(--text-color02);
+    transition: all .3s;
+}
+.btn-more::after {
+    content: '';
+    position: absolute;
+    bottom: 16px;
+    right: 25px;
+    width: 13px;
+    height: 1px;
+    background: var(--text-color02);
+    transform: rotate(35deg);
+    transition: all .3s;
+}
+.btn-more:hover::before {
+    left: 30%;
+}
+.btn-more:hover::after {
+    right: 9%;
+}
+
+/* abou.thtml */
+.about-body .section-title {
+    margin-top: 3.5rem;
+}
+.about-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    margin: 0 auto;
+
+    background: var(--sub-color);
+    padding: 6rem 0;
+    border-radius: 40% 70% 50% 30%/50%;
+}
+.about-list dt {
+    width: 38%;
+    text-align: right;
+    margin: 0 .5rem .5rem 0;
+}
+.about-list dd {
+    width: 48%;
+    margin-bottom: .5rem;
+}
+
+/*
+FOOTER
+================================================ */
+footer {
+    color: var(--text-color02);
+    background: var(--main-color);
+    text-align: center;
+}
+
+/* about.htmlでのfooter下部固定 */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.abou-body footer {
+    margin-top: auto;
+}
+
+/*
+SP SIZE
+================================================ */
+@media (max-width: 580px) {
+/* HERO */
+    .hero-main-title {
+        font-size: 4rem;
+    }
+    .hero-name-title {
+        font-size: 2rem;
+    }
+
+/* SECTION */
+    .section-title .en {
+        font-size: 2.5rem;
+    }
+    .section-title .ja {
+        font-size: .8rem;
+    }
+    .section-title .en::before,
+    .section-title .en::after {
+        width: 50px;
+    }
+    .section-title .en::before {
+        margin-left: -90px;
+    }
+    .section-title .en::after {
+        margin-left: 35px;
+    }
+
+/* ABOUT */
+    .works-item,
+    .about-text,
+    .about-list {
+        width: 80%;
+    }
+
+}
