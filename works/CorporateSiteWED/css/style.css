@@ -1,0 +1,296 @@
+@charset 'UTF-8';
+
+/*
+カスタムプロパティ
+================================================ */
+:root {
+    --text: #333;
+    --bg: #F0F0F0;
+    --white: #fff;
+}
+
+/*
+GENERAL STYLING
+================================================ */
+html {
+    font-size: 100%;
+}
+body {
+	color: var(--text);
+    background: var(--bg);
+	font-family: sans-serif;
+    font-size: 0.875rem;
+}
+
+/*
+COMMON
+================================================ */
+p,
+td {
+    line-height: 1.7;
+}
+img {
+    max-width: 100%;
+}
+li {
+    list-style: none;
+}
+
+/* Layout */
+.wrapper {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+.content {
+    margin-bottom: 7.5rem;
+}
+
+/* Heading */
+.logo {
+    width: 6.25rem;
+    margin-bottom: .5rem;
+}
+.title-en {
+    font-size: 2.25rem;
+    letter-spacing: 0.3em;
+    margin-bottom: 0.625rem;
+}
+.title-ja {
+    display: block;
+    font-size: 0.875rem;
+    margin-bottom: 2rem;
+}
+.section-title::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 2rem;
+    background: var(--text);
+    margin-bottom: 3rem;
+}
+
+/*
+HEADER
+================================================ */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .flex {
+    display: flex;
+    align-items: center;
+    margin-left: 4.75rem;
+}
+.header-nav {
+    display: flex;
+    margin-left: 3.75rem;
+}
+.nav-item:not(:first-child){
+    padding-left: 1.875rem;
+}
+.btn {
+    color: var(--white);
+    background: var(--text);
+    padding: 2rem 4.75rem;
+}
+
+/*
+MAIN
+================================================ */
+.mainvisual {
+    width: 100%;
+    height: calc(100vh - 80px);
+}
+main .flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*
+NEWS
+================================================ */
+.news-item:not(:first-child) {
+    padding: .5rem 3rem .5rem .5rem;
+}
+.news-item:first-child {
+    padding: .5rem 3rem .5rem 0;
+}
+.news-item:not(:last-child) {
+    border-right: var(--text) solid 1px;
+}
+.news-item dt {
+    padding-bottom: 1rem;
+}
+.news-item dt span {
+    font-size: .75rem;
+    background: var(--text);
+    color: var(--white);
+    padding: 0 .3rem;
+    margin-left: .7rem;
+}
+.news-item dd {
+    font-size: 1rem;
+}
+
+/*
+ABOUT
+================================================ */
+.about img {
+    width: 50%;
+    object-fit: cover;
+    margin-bottom: 7.875rem;
+}
+.about-text {
+    width: 46%;
+    padding: 0 1rem;
+    margin-top: 7.875rem;
+}
+
+/*
+BUSINESS
+================================================ */
+.business .flex {
+    margin: 0 5rem;
+}
+.left {
+    margin: 6.25rem 5rem 0 0;
+}
+.business-item1 {
+    margin-bottom: 3rem;
+}
+.business-title {
+    padding: .625rem 0;
+}
+
+/*
+COMPANY
+================================================ */
+.company {
+    height: 640px;
+    position: relative;
+}
+.company-info {
+    width: 50%;
+    background: var(--white);
+    padding: 100px 64px;
+    position: absolute;
+    top: 0;
+}
+.company-img {
+    margin: 0 1rem;
+    width: 53%;
+    height: 400px;
+    object-fit: cover;
+    position: absolute;
+    top: 25%;
+    right: 0;
+}
+.company-info dl {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: .625rem;
+}
+.company-info dl dt {
+    width: 30%;
+    padding-bottom: .625rem;
+}
+.company-info dl dd {
+    width: 68%;
+    padding-bottom: .625rem;
+}
+
+/*
+FOOTER
+================================================ */
+footer {
+    background: var(--white);
+    padding: 2.5rem 0 1.25rem;
+}
+footer .flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*
+SP SIZE
+================================================ */
+@media (max-width: 900px) {
+/* HEADER */
+    header .flex {
+        flex-direction: column;
+        align-items: start;
+        margin: 1rem;
+    }
+    .header-nav {
+        margin-left: 0;
+    }
+    header .btn {
+        display: none;
+    }
+/* MAIN */
+    main .flex {
+        flex-direction: column;
+    }
+    .mainvisual {
+        height: calc(100vh - 80px);
+        object-fit: cover;
+    }
+
+/* NEWS */
+    .news-item:not(:last-child) {
+        border: none;
+    }
+    .news-item:not(:first-child) {
+        margin-left: -.5rem;
+    }
+
+/* ABOUT */
+    .about img {
+        width: 100%;
+        margin-bottom: 1.875rem;
+    }
+    .about-text {
+        width: 100%;
+        margin-top: 0rem;
+    }
+
+/* BUSINESS */
+    .business .flex {
+        margin: 0;
+        align-items: center;
+    }
+    .left {
+        margin: 0;
+    }
+    .business-item2 {
+        margin-bottom: 3rem;
+    }
+
+/* COMPANY */
+    .company {
+        height: auto;
+        position: static;
+    }
+    .company-info {
+        width: 100%;
+        background: var(--white);
+        position: static;
+        margin-bottom: 1.25rem;
+    }
+    .company-img {
+        margin: 0;
+        width: 100%;
+        position: static;
+    }
+
+/* FOOTER */
+    footer .flex {
+        flex-direction: column;
+    }
+    .footer-list {
+        margin-bottom: 2.5rem;
+    }
+}
