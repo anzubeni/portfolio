@@ -40,7 +40,7 @@ img {
 .wrapper {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1.5rem;
+    padding: 2.5rem;
     background: var(--bg);
 }
 .column {
@@ -213,19 +213,20 @@ CONTAINER
 BLOG
 ================================================ */
 .blog {
-    width: 68%;
+    width: 60%;
 }
 .grid {
     display: grid;
     gap: 26px;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     margin: 1rem 0 3rem;
 }
 .content img {
     height: 160px;
-    width: 240px;
+    width: 250px;
     border-radius: 10px;
     box-shadow: 5px 5px 0 0 rgba(238,232,228,1);
+ 
 }
 .content dl {
     margin-top: .5rem;
@@ -275,7 +276,7 @@ BLOG
 ASIDE
 ================================================ */
 aside {
-    width: 26%;
+    width: 30%;
 }
 .side-box {
     margin-bottom: 4rem;
@@ -319,4 +320,56 @@ FOOTER
 footer {
     padding-top: 1.5rem;
     border-top: 2px var(--main-color) solid;
+}
+
+/*
+SP SIZE
+================================================ */
+@media (max-width: 1025px) {
+
+/* Heading */
+    .page-title {
+    font-size: 1.3rem;
+    }
+
+/* HHEADER */
+    .info {
+        display: block;
+        font-size: .785rem;
+    }
+    .info li {
+        padding: 0 1rem;
+    }
+    .info a:hover,
+    .info .current {
+        border-bottom: 2px solid transparent;
+    }
+
+/* SLIDER */
+    .slider img {
+        width: 320px;
+        height: 200px;
+    }
+
+/* CONTAINER */
+    .container {
+        display: block;
+    }
+
+    .blog .content {
+        margin: 0 auto;
+    }
+    .blog {
+        width: 100%;
+        margin-bottom: 5rem;
+    }
+    aside {
+        width: 100%;
+    }
+
+/* FOOTER */
+    footer {
+        font-size: .875rem;
+    }
+
 }
