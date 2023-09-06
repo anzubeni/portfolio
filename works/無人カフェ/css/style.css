@@ -438,5 +438,28 @@ TABLET SIZE
 SP SIZE
 ================================================ */
 @media (max-width: 599px) {
-
+        .logo {
+        font-size: 1rem;
+    }
+    .nav-item {
+        font-size: .5rem;
+    }
+    .nav-item+.nav-item {
+        margin-left: 1rem;
+    }
+    .kv-conceptcopy {
+        font-size: 1rem;
+    }
+    .kv-detail .section-ttl {
+        font-size: 2rem;
+    }
+    .concept-txt-main {
+        font-size: 1.25rem;
+    }
+    .concept-wrap {
+        flex-direction: column;
+    }
+    .concept-content-img-wrap {
+        width: 100%;
+    }
 }
