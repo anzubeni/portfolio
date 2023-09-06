@@ -206,11 +206,17 @@ KV
 }
 
 .kv.__index {
-    background: url(../img/index-kv.png) no-repeat center center/cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(/img/index-kv.png);
 }
 .kv.__info {
     height: 600px;
-    background: url(../img/info-kv.png) no-repeat center center/cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(/img/index-kv.png);
 }
 
 .kv-conceptcopy {
