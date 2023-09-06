@@ -438,7 +438,7 @@ TABLET SIZE
 SP SIZE
 ================================================ */
 @media (max-width: 599px) {
-        .logo {
+    .logo {
         font-size: 1rem;
     }
     .nav-item {
