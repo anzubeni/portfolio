@@ -441,6 +441,9 @@ SP SIZE
     .logo {
         font-size: 1rem;
     }
+    .section-ttl {
+        font-size: 2.5rem;
+    }
     .nav-item {
         font-size: .5rem;
     }
