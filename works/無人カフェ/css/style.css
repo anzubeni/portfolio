@@ -206,17 +206,17 @@ KV
 }
 
 .kv.__index {
+    background: linear-gradient(25deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)),url(/img/index-kv.png);
+    background-size:cover;
     background-repeat: no-repeat;
-    background-position: center;
     background-size: cover;
-    background-image: url(/img/index-kv.png);
 }
 .kv.__info {
     height: 600px;
+    background: linear-gradient(25deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)),url(/img/info-kv.png);
+    background-size:cover;
     background-repeat: no-repeat;
-    background-position: center;
     background-size: cover;
-    background-image: url(/img/info-kv.png);
 }
 
 .kv-conceptcopy {
