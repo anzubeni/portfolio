@@ -1,0 +1,453 @@
+// COLOR
+$color-accent: #3c301e;
+
+$color-text: #3c301e;
+$color-text-accent: #a98c5f;
+$color-text-accent01: #fff;
+$color-text-link: #fff;
+$color-text-button: #fff;
+
+$color-ttl-l:#fff;
+
+$color-bg: #f1eee4;
+$color-bg-accent: #3c301e;
+$color-bg-accent01: #fff;
+
+$color-button: #a98c5f;
+
+// FONT-FAMILY
+$font-primary: "Josefin Sans", "Noto Sans JP", sans-serif;
+
+// 透過度
+$opacity: 0.7;
+
+//アニメーション効果
+$transition: 0.3s;
+
+// INNER
+$layout-width-inner: 1080px;
+
+// ブレークポイント
+@mixin breakpoint($breakpoint) {
+    @if $breakpoint == pc {
+        @media (min-width: 768px) {
+            @content;
+        }
+    } @else if $breakpoint == sp {
+        @media (max-width: 767px) {
+            @content;
+        }
+    }
+}
+
+/*
+SP SIZE FIRST
+================================================ */
+html {
+    font-size: 100%;
+}
+body {
+    color: $color-text;
+    font-family: $font-primary;
+    letter-spacing: 0.05em;
+
+    &.is-fixed {
+        overflow: hidden;
+    }
+}
+img {
+    width: 100%;
+}
+button {
+    background: none;
+    border: none;
+    font: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+/*
+HEADER
+================================================ */
+.header {
+    width: 100%;
+    border-bottom: 1px solid rgba(241, 238, 228, 0.25);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 12px;
+
+    @include breakpoint(pc) {
+        padding: 16px;
+
+        .header-inner {
+            max-width: $layout-width-inner;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 40px;
+            margin: 0 auto;
+        }
+    }
+    .header-logo {
+        width: 200px;
+        margin: 0 auto;
+
+        @include breakpoint(pc) {
+            margin: 0;
+        }
+    }
+    .header-nav {
+        margin-top: 10px;
+    
+        .header-nav-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+
+            @include breakpoint(pc) {
+                gap: 40px;
+            }
+        }
+        .header-nav-link {
+            color: $color-text-link;
+            letter-spacing: 0.05em;
+
+            @include breakpoint(pc) {
+                transition: $transition;
+
+                &:hover {
+                    opacity: $opacity;
+                }
+            }
+        }
+        .header-nav-item.__drawer {
+            position: relative;
+
+            @include breakpoint(pc) {
+                .button-drawer {
+                    cursor: pointer;
+                }
+            }
+            .drawer {
+                width: 230%;
+                display: none;
+                position: absolute;
+                top: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: rgba(0, 0, 0, 0.5);
+                padding: 15px 0;
+
+                @include breakpoint(pc) {
+                    top: 38px;
+                }
+            }
+            .drawer-menu {
+                display: block;
+                color: $color-text-link;
+                text-align: center;
+                padding: 5px 0;
+
+                @include breakpoint(pc) {
+                    padding: 10px 0;
+
+                    &:hover {
+                        opacity: $opacity;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*
+SECTION共通パーツ
+================================================ */
+.section-inner {
+    padding: 0 40px;
+
+    @include breakpoint(pc) {
+        max-width: $layout-width-inner;
+        padding: 0 40px;
+        margin: 0 auto;
+    }
+}
+.section-ttl {
+    text-align: center;
+    margin-bottom: 40px;
+
+    .section-ttl-main {
+        display: block;
+        font-size: 40px;
+
+        @include breakpoint(pc) {
+            font-size: 64px;
+        }
+    }
+    .section-ttl-sub {
+        display: block;
+        font-size: 12px;
+    }
+}
+.section-ttl-l {
+    color: $color-ttl-l;
+}
+
+/*
+ABOUT
+================================================ */
+.about {
+    background-color: $color-bg;
+    padding: 40px 0 40px;
+
+    @include breakpoint(pc) {
+        padding: 100px 0 50px;
+
+        .about-img {
+            width: 300px;
+        }
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+    }
+    .about-text-content {
+        margin-top: 20px;
+
+        @include breakpoint(pc){
+            margin-top: 0;
+        }
+        .about-text {
+            font-size: 14px;
+            line-height: 2;
+
+            @include breakpoint(pc) {
+                font-size: 15px;
+            }
+            & + .about-text {
+                margin-top: 16px;
+
+                @include breakpoint(pc) {
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+}
+
+/*
+MENU
+================================================ */
+.menu {
+    background-color: $color-bg;
+    padding: 80px 0;
+
+    @include breakpoint(pc) {
+        padding: 50px 0 100px;
+
+        .menu-list {
+            display: flex;
+            gap: 20px;
+        }
+        .menu-img {
+            cursor: pointer;
+        }
+    }
+    .menu-item + .menu-item {
+        margin-top: 62px;
+
+        @include breakpoint(pc) {
+            margin-top: 0;
+        }
+    }
+    .menu-text-content {
+        text-align: center;
+        padding: 16px 10px;
+    }
+    .menu-name-main {
+        display: block;
+        font-size: 18px;
+    }
+    .menu-name-sub {
+        display: block;
+        color: $color-text-accent;
+        font-size: 12px;
+        margin-top: 8px;
+    }
+    .menu-text {
+        color: $color-text-accent;
+        font-size: 14px;
+        margin-top: 16px;
+    }
+}
+.modal-wrapper {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+
+    img {
+        max-width: 80%;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        @include breakpoint(pc) {
+            max-width: 50%;
+        }
+    }
+}
+
+/*
+SHOP
+================================================ */
+.shop {
+    background-image: url(../img/sp/bg-shop.png);
+    background-position: center center;
+    background-size: cover;
+    padding: 60px 0;
+
+    @include breakpoint(pc) {
+        background-image: url(../img/bg-shop.png);
+        background-position: center center;
+        background-size: cover;
+    }
+    .shop-inner {
+        padding: 0 20px;
+
+        @include breakpoint(pc) {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    }
+    .shop-text {
+        color: $color-text-accent01;
+        font-size: 14px;
+        text-align: center;
+        line-height: 2;
+    }
+}
+.form {
+    margin-top: 40px;
+
+    @include breakpoint(pc) {
+        display: flex;
+        gap: 20px;
+    }
+    .form-input {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.7);
+        font-family: $font-primary;
+        border: none;
+        border-radius: 4px;
+        padding: 14px;
+
+        &::placeholder {
+            color: #a98c5f;
+        }
+    }
+    .form-submit {
+        width: 120px;
+        display: block;
+        background-color: $color-button; 
+        color: $color-text-button;
+        font-family: $font-primary;
+        font-size: 13.3px;
+        border: none;
+        border-radius: 4px;
+        padding: 12px 10px;
+        margin: 10px auto 0;
+
+        @include breakpoint(pc) {
+            transition: $transition;
+            margin-top: 0;
+
+            &:hover {
+                opacity: $opacity;
+            }
+        }
+    }
+}
+
+/*
+FOOTER
+================================================ */
+.footer {
+    background-color: $color-bg-accent;
+    color: $color-text-accent01;
+    text-align: center;
+    padding-top: 46px;
+
+    .footer-logo {
+        width: 200px;
+        margin: 0 auto;
+    }
+    .footer-text {
+        font-size: 12px;
+
+        @include breakpoint(pc) {
+            margin-top: 12px;
+        }
+    }
+    .footer-nav-list {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        padding: 0 20px;
+        margin-top: 40px;
+
+        @include breakpoint(pc) {
+            gap: 40px;
+        }
+    }
+    .footer-link-text {
+        font-size: 12px;
+        margin-top: 12px;
+    }
+    .footer-copy-wrapper {
+        border-top: 1px solid rgba(241, 238, 228, 0.25);
+        padding: 12px;
+        margin-top: 46px;
+
+        .footer-copylight {
+            font-size: 12px;
+
+            @include breakpoint(pc) {
+                font-size: 13px;
+            }
+        }
+    }
+}
+.sns-img {
+    width: 56px;
+}
+
+/*
+TOPへ戻るボタン
+================================================ */
+.top-inner {
+    position: absolute;
+}
+.button-top {
+    width: 55px;
+    height: 55px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: $color-bg-accent01;
+    border: 1px solid $color-accent;
+    border-radius: 50%;
+    font-size: 13px;
+    padding: 10px;
+
+    @include breakpoint(pc) {
+        cursor: pointer;
+    }
+}
