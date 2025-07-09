@@ -462,6 +462,10 @@ PC SIZE
     gap: 40px;
   }
 
+  .about__img {
+    flex-shrink: 0;
+  }
+
   /* SERVICE SECTION */
   .service__list {
     display: grid;
