@@ -1,4 +1,22 @@
 /*
+ps入力表示
+================================================ */
+document.body.style.display = "none";
+
+window.onload = function () {
+  var UserInput = null;
+  var pass = "ZGVtbw==";
+
+  UserInput = prompt("パスワードを入力して下さい:", "");
+
+  if (UserInput != window.atob(pass)) {
+    document.body.innerHTML = "403 Forbidden";
+  }
+
+  document.body.style.display = null;
+};
+
+/*
 header ドロワー
 ================================================ */
 jQuery("#js-drawer-icon").on("click", function (e) {
@@ -231,3 +249,4 @@ window.addEventListener("scroll", function () {
     pageTop.classList.remove("is-show");
   }
 });
+
