@@ -1,3 +1,19 @@
+// ps入力表示
+document.body.style.display = "none";
+
+window.onload = function () {
+  var UserInput = null;
+  var pass = "ZGVtbw==";
+
+  UserInput = prompt("パスワードを入力して下さい:", "");
+
+  if (UserInput != window.atob(pass)) {
+    document.body.innerHTML = "403 Forbidden";
+  }
+
+  document.body.style.display = null;
+};
+
 // ドロワーメニュー
 jQuery("#js-button-drawer").on("click", function() {
     jQuery("#js-drawer").slideToggle();
@@ -26,5 +42,6 @@ jQuery(".js-menu-modal").click(function () {
 jQuery("#js-modal-wrapper").click(function () {
     jQuery("#js-modal-wrapper").fadeOut();
     jQuery("body").removeClass("is-fixed");
+
 
 });
