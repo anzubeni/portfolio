@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="robots" content="noindex" />
+
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <title>Profile</title>
+    <meta name="description" content="自転車を紹介するためのWebサイト" />
+
+    <!-- OGP -->
+    <meta property="og:title" content="Profile" />
+    <meta property="og:description" content="自転車を紹介するためのWebサイト" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://anzubeni.github.io/portfolio/works/codejump1/"
+    />
+    <meta
+      property="og:image"
+      content="https://anzubeni.github.io/portfolio/works/codejump1/img/ogp.png"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header__inner inner">
+        <h1 class="header__logo">
+          <a href="/">
+            <img
+              src="/img/logo.svg"
+              alt="Profile"
+              width="1500"
+              height="500"
+              decoding="async"
+            />
+          </a>
+        </h1>
+        <nav class="header__nav">
+          <a href="#about" class="header__link"> About </a>
+          <a href="#bicycle" class="header__link"> Bicycle </a>
+        </nav>
+      </div>
+      <!-- /.header__inner -->
+    </header>
+
+    <!-- メインビジュアル -->
+    <div class="mv">
+      <img
+        src="/img/mainvisual.jpg"
+        alt="自転車"
+        width="1920"
+        height="1280"
+        decoding="async"
+      />
+    </div>
+    <!-- /.mv メインビジュアル -->
+
+    <!-- About -->
+    <section class="about section__wrap" id="about">
+      <div class="inner">
+        <h2 class="section__heading">About</h2>
+        <div class="about__container section__content">
+          <img
+            src="/img/about.jpg"
+            alt="人物写真"
+            class="about-img"
+            width="640"
+            height="640"
+            loading="lazy"
+          />
+          <div class="about__texts">
+            <p class="about-name">KAKERU MIYAICHI</p>
+            <p class="about-text">
+              テキストテキストテキストテキストテキストテキストテキスト<br />テキストテキストテキストテキストテキストテキストテキスト<br />テキストテキストテキストテキストテキストテキストテキスト
+            </p>
+          </div>
+          <!-- /.about__texts -->
+        </div>
+        <!-- /.about__container -->
+      </div>
+      <!-- /.inner -->
+    </section>
+    <!-- /.about About -->
+
+    <!-- Bicycle -->
+    <section class="bicycle section__wrap" id="bicycle">
+      <div class="inner">
+        <h2 class="section__heading">Bicycle</h2>
+        <ul class="bicycle__list section__content">
+          <li class="bicycle__card">
+            <img src="/img/bicycle1.jpg" alt="自転車" />
+            <h3 class="bicycle__card-title">タイトルタイトル</h3>
+            <p class="bicycle__card-text">テキストテキストテキスト</p>
+          </li>
+          <li class="bicycle__card">
+            <img src="/img/bicycle2.jpg" alt="自転車" />
+            <h3 class="bicycle__card-title">タイトルタイトル</h3>
+            <p class="bicycle__card-text">テキストテキストテキスト</p>
+          </li>
+          <li class="bicycle__card">
+            <img src="/img/bicycle3.jpg" alt="自転車" />
+            <h3 class="bicycle__card-title">タイトルタイトル</h3>
+            <p class="bicycle__card-text">テキストテキストテキスト</p>
+          </li>
+        </ul>
+      </div>
+      <!-- /.inner -->
+    </section>
+    <!-- /.bicycle Bicycle -->
+
+    <footer class="footer">
+      <div class="footer__copyright">
+        <small>&copy; 2020 Profile</small>
+      </div>
+      <!-- /.footer__copyright -->
+    </footer>
+  </body>
+</html>
